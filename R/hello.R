@@ -62,7 +62,7 @@ copredict <- function(n.indep, assoc.df, iter1, iter2) {
   error <- qt(0.975,df=iter1-1)*sd(estlist)/sqrt(iter1)
   lci <- est - 1.96*error
   uci <- est + 1.96*error
-  print(paste("Estimated number of species is",est))
+  print(paste(expression("Estimated number of species is"),est))
   print(paste("The lower 95% CI is",lci))
   print(paste("The upper 95% CI is",uci))
 
