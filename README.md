@@ -1,2 +1,2 @@
 # codependent
-It's not passing fascination now, it's obsession
+An R package for doing estimation of dependent species richness based on their hosts, via rarefaction on bipartite networks
