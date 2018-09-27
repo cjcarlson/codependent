@@ -97,7 +97,7 @@ curve.50 <- function(assoc.df, iter){
       
       results.df[nrow(results.df)+1,] <- c(i, n.par)
     }
-    print(i)
+    #print(i)
   }
   return(results.df)
 }
