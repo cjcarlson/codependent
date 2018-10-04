@@ -1,8 +1,12 @@
-#' @title Binary rarefaction (curve-fitting) for 50% dataset
+#' @title Binary rarefaction (curve-fitting) for 50\% dataset
 #'
 #' @description
 #' This function runs the subsampling algorithm iteravely on half (several times over) the association dataset, and returns a fitted model describing the power law relationship 
 #'
+#' @param assoc.df The raw dataset of associations (pairs of names in two columns, hosts and affiliates)
+#' @param iter Number of iterations required for each subsample
+#'
+
 
 binera.50 <-  function(assoc.df, iter) {
   

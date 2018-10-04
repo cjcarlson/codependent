@@ -2,9 +2,14 @@
 % Please edit documentation in R/binera50.R
 \name{binera.50}
 \alias{binera.50}
-\title{Binary rarefaction (curve-fitting) for 50% dataset}
+\title{Binary rarefaction (curve-fitting) for 50\% dataset}
 \usage{
 binera.50(assoc.df, iter)
+}
+\arguments{
+\item{assoc.df}{The raw dataset of associations (pairs of names in two columns, hosts and affiliates)}
+
+\item{iter}{Number of iterations required for each subsample}
 }
 \description{
 This function runs the subsampling algorithm iteravely on half (several times over) the association dataset, and returns a fitted model describing the power law relationship
