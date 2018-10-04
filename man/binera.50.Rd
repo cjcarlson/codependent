@@ -4,7 +4,7 @@
 \alias{binera.50}
 \title{Binary rarefaction (curve-fitting) for 50\% dataset}
 \usage{
-binera.50(assoc.df, iter)
+binera.50(assoc.df, iter, plots = FALSE)
 }
 \arguments{
 \item{assoc.df}{The raw dataset of associations (pairs of names in two columns, hosts and affiliates)}

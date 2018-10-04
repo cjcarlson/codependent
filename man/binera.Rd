@@ -4,12 +4,14 @@
 \alias{binera}
 \title{Binary rarefaction (curve-fitting)}
 \usage{
-binera(assoc.df, iter)
+binera(assoc.df, iter, plots = FALSE)
 }
 \arguments{
 \item{assoc.df}{The raw dataset of associations (pairs of names in two columns, hosts and affiliates)}
 
 \item{iter}{Number of iterations required for each subsample}
+
+\item{plots}{Do you want plots? Maybe you do. The world is your oyster.}
 }
 \description{
 This function runs the subsampling algorithm on the association dataset, and returns a fitted model describing the power law relationship
