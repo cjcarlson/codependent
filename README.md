@@ -1,5 +1,7 @@
 # The codependent package :bee: :blossom:
-An R package for doing estimation of dependent species richness based on their hosts, via rarefaction on bipartite networks
+An R package for doing estimation of dependent species richness based on their hosts, via rarefaction on bipartite networks.
+
+Use the function `copredict` to extrapolate power law curves out to a higher value. Use `copredict.ci` to fit a series of models to only half of the total curve, and see what happens (for an overestimated confidence bound).
 
 Author
 ----------
