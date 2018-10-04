@@ -1,4 +1,4 @@
-# The codependent package :mosquito:
+# The codependent package :bee: :blossom:
 An R package for doing estimation of dependent species richness based on their hosts, via rarefaction on bipartite networks
 
 Author
