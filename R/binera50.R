@@ -8,7 +8,7 @@
 #'
 
 
-binera.50 <-  function(assoc.df, iter) {
+binera.50 <-  function(assoc.df, iter, plots=FALSE) {
   
   c <- curve.50(assoc.df, iter)
   model1 <- nls(n.par~b*n.host^z,start = list(b = 1, z = 0.5),data=c)
