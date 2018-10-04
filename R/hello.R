@@ -14,39 +14,9 @@
 #   Test Package:              'Ctrl + Shift + T'
 
 
-curve.df <- function(assoc.df, iter){
-
-  u.hosts <- unique(assoc.df[,1])
-  n.hosts <- length(u.hosts)
-
-  results.df <- data.frame(n.host=0,n.par=0)
-  results.df <- results.df[-1,]
-
-  for (i in 1:n.hosts) {
-    #for (i in 1:5) {
-    for (j in 1:iter) {
-
-      sub.hosts <- sample(u.hosts,i)
-      sub.df <- assoc.df[assoc.df[,1] %in% sub.hosts,]
-      u.par <- unique(sub.df[,2])
-      n.par <- length(u.par)
-
-      results.df[nrow(results.df)+1,] <- c(i, n.par)
-    }
-    #print(i)
-  }
-  return(results.df)
-}
 
 # binary network rarefaction
 
-binera <- function(assoc.df, iter) {
-
-  c <- curve.df(assoc.df, iter)
-  model1 <- nls(n.par~b*n.host^z,start = list(b = 1, z = 0.5),data=c)
-  return(model1)
-
-}
 
 
 
@@ -102,13 +72,6 @@ curve.50 <- function(assoc.df, iter){
   return(results.df)
 }
 
-binera.50 <-  function(assoc.df, iter) {
-  
-  c <- curve.50(assoc.df, iter)
-  model1 <- nls(n.par~b*n.host^z,start = list(b = 1, z = 0.5),data=c)
-  return(model1)
-  
-}
 
 
 copredict.ci <- function(n.indep, assoc.df, iter1, iter2) {
