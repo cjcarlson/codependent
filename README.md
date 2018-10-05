@@ -29,7 +29,7 @@ knitr::opts_chunk$set(echo = FALSE,
 devtools::install_github("cjcarlson/codependent")
 ```
 
-``` r
+``` {r dataset, message=FALSE}
 # Load the package
 
 library(codependent)
