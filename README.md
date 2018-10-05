@@ -14,22 +14,22 @@ Installing the package
 Install directly from Github:
 
 ``` {r, setup, echo = FALSE, message = FALSE}
-knitr::opts_chunk$set(echo = FALSE,
-  comment = "#",
-  tidy = FALSE,
-  error = FALSE,
-  fig.width = 7,
-  fig.height = 4.5,
-  fig.path = 'vignettes/readme-',
-  cache=FALSE)
+knitr::opts_chunk$set(echo = FALSE)
 # If you don't have devtools:
 # install.packages("devtools")
 devtools::install_github("cjcarlson/codependent")
 ```
 
+Load the package
+
 ``` {r dataset, message=FALSE}
-# Load the package
 library(codependent)
+```
+
+Test out the functionality:
+
+
+``` {r dataset, message=FALSE}
 data(rob1929)
 head(rob1929)
 binera(rob1929,10,plots=TRUE)
