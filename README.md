@@ -14,7 +14,6 @@ Installing the package
 Install directly from Github:
 
 ``` {r, setup, echo = FALSE, message = FALSE}
-knitr::opts_chunk$set(echo = FALSE)
 # If you don't have devtools:
 # install.packages("devtools")
 devtools::install_github("cjcarlson/codependent")
