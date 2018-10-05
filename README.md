@@ -13,9 +13,9 @@ Installing the package
 
 Install directly from Github:
 
-``` r
+``` {r, setup, echo = FALSE, message = FALSE}
 knitr::opts_chunk$set(echo = FALSE,
-  comment = "#>",
+  comment = "#",
   tidy = FALSE,
   error = FALSE,
   fig.width = 7,
