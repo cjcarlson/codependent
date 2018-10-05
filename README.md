@@ -32,10 +32,5 @@ devtools::install_github("cjcarlson/codependent")
 library(codependent)
 data(rob1929)
 head(rob1929)
-```
-
-```{r chunk_name, echo=FALSE, eval=do_it}
-x <- rnorm(100)
-y <- 2*x + rnorm(100)
-cor(x, y)
+binera(rob1929,10,plots=TRUE)
 ```
