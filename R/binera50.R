@@ -16,7 +16,7 @@ binera.50 <-  function(assoc.df, iter, plots=FALSE) {
   pred.df <- data.frame(pred = predict(model1), host = c$n.host)
   
   if(plots==TRUE) {
-    g <- ggplot(c, aes(n.host, n.par)) + xlim(0,max(c$n.host)*1.05) + ylim(0,max(c$n.par)*1.05) + xlab('Hosts') + ylab('Affiliates') + 
+    g <- ggplot2::ggplot(c, aes(n.host, n.par)) + xlim(0,max(c$n.host)*1.05) + ylim(0,max(c$n.par)*1.05) + xlab('Hosts') + ylab('Affiliates') + 
       geom_point(shape = 16, size = 2.5, show.legend = FALSE, alpha = .15, color='darkturquoise') + theme_bw() +
       geom_line(color='black',lwd=1,data = pred.df, aes(x=host, y=pred))
     print(g)
