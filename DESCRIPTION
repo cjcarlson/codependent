@@ -1,17 +1,14 @@
 Package: codependent
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Bipartite network rarefaction for affiliate species richness
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Colin Carlson
+Maintainer: Colin Carlson (ccarlson@sesync.org)
+Description: An R package for estimating affiliate species richness based on power law scaling with host diversity, using rarefaction on bipartite species association networks.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.0
 Depends:
-    ggplot2
-Imports: 
     ggplot2,
     EnvStats
