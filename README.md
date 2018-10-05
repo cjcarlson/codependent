@@ -1,4 +1,4 @@
-# The codependent package :bee: :blossom:
+# The codependent package :blossom: :bee:
 An R package for estimating affiliate species richness based on power law scaling with host diversity, using rarefaction on bipartite species association networks. Because [some things](https://www.manrepeller.com/2018/05/gilmore-girls-and-codependency.html) just go together.
 
 Use the function `copredict` to extrapolate power law curves out to a higher value. Use `copredict.ci` to fit a series of models to only half of the total curve, and see what happens (for an overestimated confidence bound).
