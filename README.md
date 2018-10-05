@@ -14,7 +14,14 @@ Installing the package
 Install directly from Github:
 
 ``` r
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE,
+  comment = "#>",
+  tidy = FALSE,
+  error = FALSE,
+  fig.width = 7,
+  fig.height = 4.5,
+  fig.path = 'vignettes/readme-',
+  cache=FALSE)
 
 # If you don't have devtools:
 # install.packages("devtools")
@@ -26,4 +33,8 @@ devtools::install_github("cjcarlson/codependent")
 # Load the package
 
 library(codependent)
+
+data(rob1929)
+head(rob1929)
 ```
+
