@@ -1,3 +1,7 @@
+---
+title: "README.Rmd"
+output: html_document
+---
 # The codependent package :bee: :blossom:
 An R package for estimating affiliate species richness based on power law scaling with host diversity, using rarefaction on bipartite species association networks. Because [some things](https://www.manrepeller.com/2018/05/gilmore-girls-and-codependency.html) just go together.
 
@@ -34,8 +38,9 @@ data(rob1929)
 head(rob1929)
 ```
 
-```{r chunk_name, echo=FALSE, eval=do_it}
+```{r chunk_name, echo=FALSE}
 x <- rnorm(100)
 y <- 2*x + rnorm(100)
 cor(x, y)
 ```
+
