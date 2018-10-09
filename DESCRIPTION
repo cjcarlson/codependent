@@ -2,8 +2,8 @@ Package: codependent
 Type: Package
 Title: Bipartite network rarefaction for affiliate species richness
 Version: 0.1.0
-Author: Colin Carlson
-Maintainer: Colin Carlson (ccarlson at sesync dot org)
+Author: person("Colin", "Carlson", email="ccarlson@sesync.org", role = c("aut", "cre"))
+Maintainer: person("Colin", "Carlson", email="ccarlson@sesync.org", role = c("aut", "cre"))
 Description: An R package for estimating affiliate species richness based on power law scaling with host diversity, using rarefaction on bipartite species association networks.
 License: What license is it under?
 Encoding: UTF-8
