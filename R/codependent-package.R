@@ -10,9 +10,9 @@
 #' @docType package
 #' @author Colin Carlson (\email{ccarlson@@sesync.org})
 #'
-#' @import 
-#' @importFrom stats EnvStats ggplot2
-#' 
+#' @import EnvStats
+#' @import ggplot2
+#'
 #'
 #'
 #'
