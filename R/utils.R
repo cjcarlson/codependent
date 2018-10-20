@@ -1,33 +1,23 @@
-# Hello, world!
-#
-# This is an example function named 'hello'
-# which prints 'Hello, world!'.
-#
-# You can learn more about package authoring with RStudio at:
-#
-#   http://r-pkgs.had.co.nz/
-#
-# Some useful keyboard shortcuts for package authoring:
-#
-#   Build and Reload Package:  'Ctrl + Shift + B'
-#   Check Package:             'Ctrl + Shift + E'
-#   Test Package:              'Ctrl + Shift + T'
 
-
-
-# binary network rarefaction
-
-
-
+#' @title Binary rarefaction 
+#'
+#' @description
+#'
+#' @param n.indep The independent host richness (the model predicts and extrapolates to this vallue)
+#' @param assoc.df A data frame of host-affiliate intractions, host names in the first column and affiliate names in the second
+#' @param iter1 Set the number of times to fit a curve
+#' @param iter2 Set the number of points to subsample at each host richness within the generation of each curve
+#'
+#' @export
 
 copredict <- function(n.indep, assoc.df, iter1, iter2) {
 
   estlist <- c()
   for (i in 1:iter1) {
-  q <- coef(binera(assoc.df, iter2))
-  est <- q["b"] * (n.indep)^(q["z"])
-  estlist <- c(estlist,est)
-  print(i)
+		q <- coef(binera(assoc.df, iter2))
+		est <- q["b"] * (n.indep)^(q["z"])
+		estlist <- c(estlist,est)
+		print(i)
   }
 
   est <- mean(estlist)
@@ -41,6 +31,18 @@ copredict <- function(n.indep, assoc.df, iter1, iter2) {
 
 
 }
+
+
+
+#' @title Binary rarefaction 
+#'
+#' @description
+#'
+#' @param assoc.df A data frame of host-affiliate intractions, host names in the first column and affiliate names in the second
+#' @param iter 
+#' @param hostList currently undefined, but assumed to be global?
+#'
+#' @export
 
 
 curve.50 <- function(assoc.df, iter){
@@ -74,6 +76,17 @@ curve.50 <- function(assoc.df, iter){
 
 
 
+#' @title Binary rarefaction 
+#'
+#' @description
+#'
+#' @param n.indep The independent host richness (the model predicts and extrapolates to this vallue)
+#' @param assoc.df A data frame of host-affiliate intractions, host names in the first column and affiliate names in the second
+#' @param iter1 Set the number of times to fit a curve
+#' @param iter2 Set the number of points to subsample at each host richness within the generation of each curve
+#'
+#' @export
+
 copredict.ci <- function(n.indep, assoc.df, iter1, iter2) {
   
   estlist <- c()
@@ -88,8 +101,7 @@ copredict.ci <- function(n.indep, assoc.df, iter1, iter2) {
     est100list <- c(est100list,est.100)
     print(i)
   }
-  
-  
+    
   e2 <- elnorm(est100list, method = "mvue", ci = TRUE, ci.type = "two-sided", 
                ci.method = "exact", conf.level = 0.95)
   est2 <- exp(e2$parameters[1])
@@ -111,13 +123,9 @@ copredict.ci <- function(n.indep, assoc.df, iter1, iter2) {
   est <- exp(e1$parameters[1])
   lci <- exp(e1$interval$limits[1])
   uci <- exp(e1$interval$limits[2])
-  
 
                 
   print(paste(expression("Extrapolated estimated number of species is"),est))
   print(paste("The lower 95% CI is",lci))
   print(paste("The upper 95% CI is",uci))
-  
-  
-  
 }
