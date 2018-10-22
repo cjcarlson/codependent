@@ -1,7 +1,7 @@
 Package: codependent
 Type: Package
 Title: Bipartite network rarefaction for affiliate species richness
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: person("Colin", "Carlson", email="ccarlson@sesync.org", role = c("aut", "cre"))
 Description: An R package for estimating affiliate species richness based on power law scaling with host diversity, using rarefaction on bipartite species association networks.
 License: What license is it under?
