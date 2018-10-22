@@ -1,3 +1,12 @@
+#' 
+#' 
+#' @importFrom stats nls
+#' @importFrom stats sd
+#' @importFrom stats qt
+#' @importFrom stats coef
+#' @importFrom graphics hist
+#' @importFrom graphics par
+#' 
 #' @title Extrapolating richness via curve-fitting
 #'
 #' @description
@@ -8,21 +17,23 @@
 #' @param iter1 Set the number of times to fit a curve
 #' @param iter2 Set the number of points to subsample at each host richness within the generation of each curve
 #' @param plot (boolean; default is TRUE) plot results?
-#'
+#' 
+#' @details 
+#' 
 #' @export
 
 
 copredict <- function(n.indep, assoc.df, 
 	iter1, iter2, plot=TRUE) {
 	estlist <- sapply(1:iter1, function(x){
-		q <- coef(binera(assoc.df, iter2))
+		q <- stats::coef(binera(assoc.df, iter2))
     q["b"] * (n.indep)^(q["z"])
 	})
   est <- mean(estlist)
 	if(plot){
-	  hist(estlist, main='Extrapolated estimates')
+	  graphics::hist(estlist, main='Extrapolated estimates')
 	}
-  error <- qt(0.975, df=iter1-1) * sd(estlist)/sqrt(iter1)
+  error <- stats::qt(0.975, df=iter1-1) * sd(estlist)/sqrt(iter1)
   lci <- est - 1.96*error
   uci <- est + 1.96*error
 #  print(paste(expression("Estimated number of species is"),est))

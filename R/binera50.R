@@ -10,9 +10,10 @@
 
 
 binera.50 <-  function(assoc.df, iter, plots=FALSE) {
-
+  
+  n.host <- n.par <- host <- pred <- 0 
   c <- curve.50(assoc.df, iter)
-  model1 <- nls(n.par~b*n.host^z,start = list(b = 1, z = 0.5),data=c)
+  model1 <- stats::nls(n.par~b*n.host^z,start = list(b = 1, z = 0.5),data=c)
 
   pred.df <- data.frame(pred = predict(model1), host = c$n.host)
 

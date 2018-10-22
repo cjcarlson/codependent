@@ -33,3 +33,6 @@ Fit a series of curves to subsamples of the data, return an extrapolated estimat
 
 
 }
+\details{
+
+}

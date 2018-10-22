@@ -11,4 +11,6 @@ RoxygenNote: 6.1.0
 Depends: ggplot2,
     EnvStats
 Imports: EnvStats,
-    ggplot2
+    ggplot2,
+    stats,
+    graphics

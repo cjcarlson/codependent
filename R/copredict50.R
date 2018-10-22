@@ -1,3 +1,13 @@
+#' 
+#' 
+#' @importFrom stats nls
+#' @importFrom stats sd
+#' @importFrom stats qt
+#' @importFrom stats coef
+#' @importFrom graphics hist
+#' @importFrom graphics par
+#' 
+#' 
 #' @title Extrapolating richness via curve-fitting, using half the network
 #'
 #' @description
@@ -10,6 +20,7 @@
 #' @param iter2 Set the number of points to subsample at each host richness within the generation of each curve
 #' @param plot (boolean; default is TRUE) plot results?
 #'
+#' @details 
 #' @export
 
 
