@@ -23,26 +23,7 @@
 #' @export
 
 
-copredict <- function(n.indep, assoc.df, 
-	iter1=1, iter2, method=2, plot=TRUE) {
-  
-  if(method==1) {
-	estlist <- sapply(1:iter1, function(x){
-		q <- stats::coef(binera(assoc.df, iter2))
-    q["b"] * (n.indep)^(q["z"])
-	})
-  est <- mean(estlist)
-	if(plot){
-	  graphics::hist(estlist, main='Extrapolated estimates')
-	}
-  error <- stats::qt(0.975, df=iter1-1) * sd(estlist)/sqrt(iter1)
-  lci <- est - 1.96*error
-  uci <- est + 1.96*error
-#  print(paste(expression("Estimated number of species is"),est))
-#  print(paste("The lower 95% CI is",lci))
-#  print(paste("The upper 95% CI is",uci))
-  
-  } else if (method==2) {
+copredict <- function(assoc.df, n.indep, iter, plot=TRUE) {
     
     model <- binera(assoc.df, iter2)
     q <- stats::coef(model)
@@ -51,6 +32,5 @@ copredict <- function(n.indep, assoc.df,
     lci <- p.cis[1] * (n.indep)^(p.cis[2])
     uci <- p.cis[3] * (n.indep)^(p.cis[4])
     
-  }
 	return(c(mean=est, lowerCI=lci, upperCI=uci))
 }
