@@ -13,4 +13,5 @@ Depends: ggplot2,
 Imports: EnvStats,
     ggplot2,
     stats,
-    graphics
+    graphics,
+    nlstools

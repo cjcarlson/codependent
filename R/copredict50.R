@@ -6,6 +6,7 @@
 #' @importFrom stats coef
 #' @importFrom graphics hist
 #' @importFrom graphics par
+#' @importFrom nlstools confint2
 #' 
 #' 
 #' @title Extrapolating richness via curve-fitting, using half the network
