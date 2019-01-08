@@ -24,46 +24,27 @@
 #' @export
 
 
-copredict.ci <- function(n.indep, assoc.df, 
-	iter1, iter2, plot=TRUE) {
+copredict.ci <- function(assoc.df, n.indep, iter, plot=TRUE) {
+  
+  model <- binera(assoc.df, iter)
+  q <- stats::coef(model)
+  p.cis <- nlstools::confint2(model)
+  
+  h.count <- length(unique(assoc.df[,1]))
+  p.count <- length(unique(assoc.df[,2]))
 
-  estlist <- c()
-  est100list <- c()
-  df <- data.frame(blist = c(0), zlist=c(0))
-  for (i in 1:iter1) {
-    q <- coef(binera.50(assoc.df, iter2))
-    est <- q["b"] * (n.indep)^(q["z"])
-    est.100 <- q["b"] * (length(unique(assoc.df[,1])))^q["z"]
-    df[i,] <- c(q["b"],q["z"])
-    estlist <- c(estlist,est)
-    est100list <- c(est100list,est.100)
-    print(i)
-  }
-
-  e2 <- elnorm(est100list, method = "mvue", ci = TRUE, ci.type = "two-sided",
-               ci.method = "exact", conf.level = 0.95)
-  est2 <- exp(e2$parameters[1])
-  lci2 <- exp(e2$interval$limits[1])
-  uci2 <- exp(e2$interval$limits[2])
-
-  print(paste(expression("True number of species in entire network is "),length(unique(assoc.df[,2]))))
+  est2 <- q["b"] * (h.count)^(q["z"])
+  lci2 <- p.cis[1] * (h.count)^(p.cis[2])
+  uci2 <- p.cis[3] * (h.count)^(p.cis[4])
+  
+  print(paste(expression("True number of species in entire network is "),p.count))
   print(paste(expression("Estimated number of species in entire network is "),est2))
   print(paste("The lower 95% CI is ",lci2))
   print(paste("The upper 95% CI is ",uci2))
-
-
-	if(plot){
-		par(mfrow=c(2,1))
-		hist(est100list,main='100% estimates')
-		hist(estlist,main='Extrapolated estimates')
-	}
-
-  e1 <- elnorm(estlist, method = "mvue", ci = TRUE, ci.type = "two-sided",
-               ci.method = "exact", conf.level = 0.95)
-
-  est <- exp(e1$parameters[1])
-  lci <- exp(e1$interval$limits[1])
-  uci <- exp(e1$interval$limits[2])
+  
+  est <- q["b"] * (n.indep)^(q["z"])
+  lci <- p.cis[1] * (n.indep)^(p.cis[2])
+  uci <- p.cis[3] * (n.indep)^(p.cis[4])
 
   print(paste(expression("Extrapolated estimated number of species is "),est))
   print(paste("The lower 95% CI is ",lci))
@@ -72,7 +53,7 @@ copredict.ci <- function(n.indep, assoc.df,
 	ret <- data.frame(
 		richness=c('True species richness', 'Estimated richness', 'Extrapolated richness'),
 		estimate = c(length(unique(assoc.df[,2])), est2, est),
-		lowerCI = c(NA, lci2, lci), 
-		upperCI = c(NA, uci2, uci)) 
+		lowerCI = c('--', lci2, lci), 
+		upperCI = c('--', uci2, uci)) 
 	return(ret)
 }
