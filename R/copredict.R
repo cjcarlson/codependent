@@ -32,5 +32,7 @@ copredict <- function(assoc.df, n.indep, iter, plot=TRUE) {
     lci <- p.cis[1] * (n.indep)^(p.cis[2])
     uci <- p.cis[3] * (n.indep)^(p.cis[4])
     
-	return(c(mean=est, lowerCI=lci, upperCI=uci))
+	return(list(c(mean=est, lowerCI=lci, upperCI=uci),
+	            q,
+	            p.cis))
 }

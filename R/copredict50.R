@@ -27,7 +27,7 @@
 
 copredict.ci <- function(assoc.df, n.indep, iter, plot=TRUE) {
   
-  model <- binera(assoc.df, iter)
+  model <- binera.50(assoc.df, iter)
   q <- stats::coef(model)
   p.cis <- nlstools::confint2(model)
   
