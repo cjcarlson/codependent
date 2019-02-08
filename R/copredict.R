@@ -1,12 +1,4 @@
-#' 
-#' 
-#' @importFrom stats nls
-#' @importFrom stats sd
-#' @importFrom stats qt
-#' @importFrom stats coef
-#' @importFrom graphics hist
-#' @importFrom graphics par
-#' 
+
 #' @title Extrapolating richness via curve-fitting
 #'
 #' @description
@@ -19,6 +11,13 @@
 #' @param plot (boolean; default is TRUE) plot results?
 #' 
 #' @details 
+#'
+#' @importFrom stats nls
+#' @importFrom stats sd
+#' @importFrom stats qt
+#' @importFrom stats coef
+#' @importFrom graphics hist
+#' @importFrom graphics par
 #' 
 #' @export
 
