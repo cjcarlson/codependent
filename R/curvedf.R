@@ -11,9 +11,6 @@
 #' @param subSample Fraction of host species to subsample for richness estimation
 #' @export
 
-<<<<<<< HEAD
-curve.df <- function(assoc.df, iter, subSample=0){
-=======
 curve.df <- function(assoc.df, iter, subSample=NULL){
 
   if(!is.null(subSample)){
@@ -21,9 +18,7 @@ curve.df <- function(assoc.df, iter, subSample=NULL){
     hostCut <- sample(hostlist, round(subSample*hostlist,0), replace = FALSE)
     assoc.df <- assoc.df[assoc.df[,1] %in% hostCut,]
   }
->>>>>>> origin/master
-
-  # placeholder: Tad add subsample at this level because you didn't
+  
   u.hosts <- unique(assoc.df[,1])
   n.hosts <- length(u.hosts)
 
@@ -50,14 +45,3 @@ curve.df <- function(assoc.df, iter, subSample=NULL){
 
 
 
-
-<<<<<<< HEAD
-      results.df[nrow(results.df)+1,] <- c(i, n.par)
-    }
-    #print(i)
-  }
-  results.df <- data.frame(results.df)
-  return(results.df)
-}
-=======
->>>>>>> origin/master
