@@ -36,7 +36,7 @@ curve.df <- function(assoc.df, iter, subSample=NULL){
   
   results.df <- lapply(1:n.hosts, 
     oneSp, i=iter)
-  ret <- do.call(rbind, results.df)
+  ret <- data.frame(do.call(rbind, results.df))
   colnames(ret) <- c('n.host', 'n.par')
   return(ret)
 }
