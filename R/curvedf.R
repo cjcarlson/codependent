@@ -8,8 +8,9 @@
 #'
 #' @export
 
-curve.df <- function(assoc.df, iter){
+curve.df <- function(assoc.df, iter, subSample=0){
 
+  # placeholder: Tad add subsample at this level because you didn't
   u.hosts <- unique(assoc.df[,1])
   n.hosts <- length(u.hosts)
 
@@ -29,5 +30,6 @@ curve.df <- function(assoc.df, iter){
     }
     #print(i)
   }
+  results.df <- data.frame(results.df)
   return(results.df)
 }
