@@ -6,15 +6,16 @@
 #' @param assoc.df The raw dataset of associations (pairs of names in two columns, hosts and affiliates)
 #' @param iter Number of iterations required for each subsample
 #' @param plots Do you want plots? Maybe you do. The world is your oyster.
+#' @param subSample Fraction of host species to subsample (default=NULL, use all data)
 #'
 #' @export
 
 
-binera <- function(assoc.df, iter, plots=FALSE) {
+binera <- function(assoc.df, iter, plots=FALSE, subSample=NULL) {
 
   n.host <- n.par <- host <- pred <- 0 
   
-  c <- curve.df(assoc.df, iter)
+  c <- curve.df(assoc.df, iter, subSample=subSample)
   model1 <- stats::nls(n.par~b*n.host^z,start = list(b = 1, z = 0.5),data=c)
 
   if(plots==TRUE) {

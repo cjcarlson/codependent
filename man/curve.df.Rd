@@ -4,13 +4,17 @@
 \alias{curve.df}
 \title{Subsampling of entire network}
 \usage{
-curve.df(assoc.df, iter)
+curve.df(assoc.df, iter, subSample = NULL)
 }
 \arguments{
-\item{assoc.df}{The raw dataset of associations (pairs of names in two columns, hosts and affiliates)}
+\item{assoc.df}{The raw dataset of associations (pairs of names in 
+two columns, hosts and affiliates)}
 
 \item{iter}{Number of iterations required for each subsample}
+
+\item{subSample}{Fraction of host species to subsample for richness estimation}
 }
 \description{
-This function iteratively samples the entire network and generates a data frame with sub-sample host and affilaite richness tallied together
+This function iteratively samples the entire network and generates 
+a data frame with sub-sample host and affilaite richness tallied together
 }

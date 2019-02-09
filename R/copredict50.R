@@ -20,14 +20,17 @@
 #' @param iter1 Set the number of times to fit a curve
 #' @param iter2 Set the number of points to subsample at each host richness within the generation of each curve
 #' @param plot (boolean; default is TRUE) plot results?
+#' @param subSample Fraction of host species to subsample (default=NULL, use all data)
+#'
 #'
 #' @details 
 #' @export
 
 
-copredict.ci <- function(assoc.df, n.indep, iter, plot=TRUE) {
+copredict.ci <- function(assoc.df, n.indep, iter, 
+  plot=TRUE, subSample=0.5) {
   
-  model <- binera.50(assoc.df, iter)
+  model <- binera(assoc.df, iter, subSample)
   q <- stats::coef(model)
   p.cis <- nlstools::confint2(model)
   

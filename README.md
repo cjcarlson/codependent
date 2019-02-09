@@ -8,6 +8,8 @@ Author
 
 Colin J. Carlson (ccarlson@sesync.org)
 
+(Contributions by Tad Dallas!)
+
 Installing the package
 ----------------------
 
