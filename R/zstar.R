@@ -37,7 +37,7 @@ zstar <- function(assoc.df, nsamp=1, npts=100, plot=TRUE) {
     }
   }
   
-  print(zvals)
+  #print(zvals)
   
   z.0 <- min(zvals$z) * 0.5
   model.0 <- lm(log(z - z.0) ~ nhost, data=zvals)
