@@ -14,6 +14,7 @@
 #' @importFrom stats coef
 #' @importFrom graphics hist
 #' @importFrom graphics par
+#' @importFrom nlstools confint2
 #' 
 #' @export
 
@@ -30,11 +31,13 @@ zstar <- function(assoc.df, nsamp=1, npts=100, plot=TRUE) {
     host.list <- sample(assoc.df[,1],iter)
     net.sub <- assoc.df[assoc.df[,1] %in% host.list,]
     net.sub <- unique(net.sub[,1:2])
-    cop <- tryCatch(copredict(net.sub, n.host, nsamp, plot=TRUE),error = function(e){NA})
+    cop <- tryCatch(codependent::copredict(net.sub, n.host, nsamp, plot=TRUE),error = function(e){NA})
     if(!is.na(cop)){
       zvals[i,] <- c(iter, as.numeric(cop[[2]][2]), as.numeric(cop[[1]][1]))
     }
   }
+  
+  print(zvals)
   
   z.0 <- min(zvals$z) * 0.5
   model.0 <- lm(log(z - z.0) ~ nhost, data=zvals)
