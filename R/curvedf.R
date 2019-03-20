@@ -15,7 +15,7 @@ curve.df <- function(assoc.df, iter, subSample=NULL){
 
   if(!is.null(subSample)){
     hostlist <- unique(assoc.df[,1])
-    hostCut <- sample(hostlist, round(subSample*hostlist,0), replace = FALSE)
+    hostCut <- sample(hostlist, round(subSample*length(hostlist),0), replace = FALSE)
     assoc.df <- assoc.df[assoc.df[,1] %in% hostCut,]
   }
   
