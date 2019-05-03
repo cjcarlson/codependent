@@ -13,6 +13,7 @@
 
 coextinct <- function(assoc.df, iter=100, plots=FALSE, subSample=NULL) {
   
+  assoc.df = unique(na.omit(assoc.df))
   n.host <- n.par <- host <- pred <- 0 
   
   cu <- curve.df(assoc.df, iter, subSample=subSample)

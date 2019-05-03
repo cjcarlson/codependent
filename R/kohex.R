@@ -13,7 +13,7 @@
 
 kohex <- function(assoc.df, E) {
   
-  assoc.df = unique(assoc.df)
+  assoc.df = unique(na.omit(assoc.df))
   H <- length(unique(assoc.df[,1]))
   h <- H-E
   n <- length(unique(assoc.df[,2]))
@@ -34,7 +34,7 @@ kohex <- function(assoc.df, E) {
 
 koh.approx <- function(assoc.df, E) {
   
-  assoc.df = unique(assoc.df)
+  assoc.df = unique(na.omit(assoc.df))
   H <- length(unique(assoc.df[,1]))
   h <- H-E
   n <- length(unique(assoc.df[,2]))
