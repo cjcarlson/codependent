@@ -46,8 +46,8 @@ zstar <- function(assoc.df, nsamp=1, npts=100, plot=TRUE) {
                 data = zvals, start = start)
   
   pred <- predict(nl.fit)
-  plot(zvals[,1:2])
-  points(pred~zvals$nhost, col='red')
+  if(plot==TRUE){plot(zvals[,1:2])
+  points(pred~zvals$nhost, col='red')}
   
   z.est <- coef(nl.fit)[3]
   z.conf <- nlstools::confint2(nl.fit)[3,]
