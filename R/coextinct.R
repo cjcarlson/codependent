@@ -30,7 +30,7 @@ coextinct <- function(assoc.df, iter=100, plots=FALSE, subSample=NULL) {
   pred.ex[,2] <- (max(pred.df[,2])-pred.df[,2])/(max(pred.df[,2]))
   
   # KOH CODE
-  koh.list <- sapply(c(1:length(unique(assoc.df[,1]))), kohex, assoc.df=toju2018)
+  koh.list <- sapply(c(1:length(unique(assoc.df[,1]))), kohex, assoc.df=assoc.df)
   koh.df <- data.frame(host.ext = c(1:length(unique(assoc.df[,1]))),
                        pred.ext = length(unique(assoc.df[,2]))-koh.list)
   koh.df[,1] <- koh.df[,1]/length(unique(assoc.df[,1]))
