@@ -22,8 +22,7 @@ kohex <- function(assoc.df, E) {
   sj <- function(num) {sum(degdist==num)}
   
   alpha <- function(j) {
-    if(j+h<=H){
-      (factorial(H-h)*factorial(H-j))/(factorial(H-h-j)*factorial(H))
+    if(j+h<=H){choose((H-j),h)/choose(H,h)
     } else {0}}
   
   tau.f <- function(j) {alpha(j)*sj(j)}
