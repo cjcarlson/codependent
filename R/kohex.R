@@ -11,7 +11,38 @@
 #' @export
 
 
-kohex <- function(assoc.df) {
+kohex <- function(assoc.df, E) {
   
+  assoc.df = unique(assoc.df)
+  H <- length(unique(assoc.df[,1]))
+  h <- H-E
+  n <- length(unique(assoc.df[,2]))
+  
+  degdist <- c(table(assoc.df[,2]))
+  sj <- function(num) {sum(degdist==num)}
+  
+  alpha <- function(j) {
+    if(j+h<=H){
+      (factorial(H-h)*factorial(H-j))/(factorial(H-h-j)*factorial(H))
+    } else {0}}
+  
+  tau.f <- function(j) {alpha(j)*sj(j)}
+  tau <- n - sum(sapply(c(1:H), tau.f))
+  return(tau)
+}
+
+
+koh.approx <- function(assoc.df, E) {
+  
+  assoc.df = unique(assoc.df)
+  H <- length(unique(assoc.df[,1]))
+  h <- H-E
+  n <- length(unique(assoc.df[,2]))
+  
+  degdist <- c(table(assoc.df[,2]))
+  sbar <- mean(degdist)
+  
+  A.est <- (0.35*E - 0.43)*E*log(sbar) + E
+  return(A.est)
   
 }
