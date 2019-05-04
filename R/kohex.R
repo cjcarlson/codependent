@@ -21,8 +21,7 @@ kohex <- function(assoc.df, E) {
   degdist <- c(table(assoc.df[,2]))
   sj <- function(num) {sum(degdist==num)}
   
-  alpha <- function(j) {
-    if(j+h<=H){choose((H-j),h)/choose(H,h)
+  alpha <- function(j) {if(j+h<=H){choose((H-j),h)/choose(H,h)
     } else {0}}
   
   tau.f <- function(j) {alpha(j)*sj(j)}
@@ -45,3 +44,5 @@ koh.approx <- function(assoc.df, E) {
   return(A.est)
   
 }
+
+
