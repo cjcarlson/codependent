@@ -11,7 +11,7 @@
 #' @export
 
 
-binera <- function(assoc.df, iter=100, plots=FALSE, subSample=NULL) {
+binera <- function(assoc.df, iter=100, plots=FALSE, subSample=NULL, koh=FALSE) {
 
   n.host <- n.par <- host <- pred <- 0 
   
@@ -23,6 +23,14 @@ binera <- function(assoc.df, iter=100, plots=FALSE, subSample=NULL) {
   g <- ggplot2::ggplot(cu, aes(n.host, n.par)) + xlim(0,max(cu$n.host)*1.05) + ylim(0,max(cu$n.par)*1.05) + xlab('Hosts') + ylab('Affiliates') +
     geom_point(shape = 16, size = 2.5, show.legend = FALSE, alpha = .15, color='darkturquoise') + theme_bw() +
     geom_line(color='black',lwd=1,data = pred.df, aes(x=host, y=pred))
+  
+  if(koh==TRUE) {
+    vals <- c(0:length(unique(assoc.df[,1])))
+    dfvals <- sapply(length(unique(assoc.df[,1]))-vals, kohex, assoc.df=assoc.df)
+    koh.df <- data.frame(vals, dfvals)
+    g <- g + geom_line(color='red',lwd=1,linetype=2,data = koh.df, aes(x=vals, y=dfvals))
+  }
+  
   print(g)
   }
   return(model1)
