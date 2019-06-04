@@ -22,17 +22,31 @@ Install directly from Github:
 devtools::install_github("cjcarlson/codependent")
 ```
 
+What can you do with codependent?
+----------------------
+
 Load the package
 
 ``` {r dataset, message=FALSE}
 library(codependent)
 ```
 
-Test out the functionality:
-
+You can build and fit nested curves using _binera_, for bipartite network rarefaction:
 
 ``` {r dataset, message=FALSE}
 data(rob1929)
 head(rob1929)
-binera(rob1929,10,plots=TRUE)
+binera(rob1929, iter=10, plots=TRUE)
 ```
+
+You can EXTRAPOLATE to a higher number of hosts using _copredict_:
+
+
+
+Coextinction curves in the style of Koh _et al._, 2004
+
+
+``` {r dataset, message=FALSE}
+coextinct(rob1929, iter=10, plots=TRUE)
+```
+
