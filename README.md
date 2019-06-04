@@ -7,7 +7,7 @@ Use the function `copredict` to extrapolate power law curves out to a higher val
 Author
 ----------
 
-Colin J. Carlson (ccarlson@sesync.org)
+Colin J. Carlson (cjc322@georgetown.edu)
 
 (Contributions by Tad Dallas!)
 
