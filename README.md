@@ -9,7 +9,7 @@ Author
 
 Colin J. Carlson (cjc322@georgetown.edu)
 
-(Contributions by Tad Dallas!)
+Contributions by Tad Dallas (LSU) and Laura Ward Alexander (UC Berkeley)
 
 Installing the package
 ----------------------
