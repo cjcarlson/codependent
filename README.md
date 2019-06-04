@@ -31,7 +31,7 @@ Load the package
 library(codependent)
 ```
 
-You can build and fit nested curves using _binera_, for bipartite network rarefaction:
+You can build and fit nested curves using `binera`, for bipartite network rarefaction:
 
 ``` {r dataset, message=FALSE}
 data(rob1929)
@@ -39,14 +39,18 @@ head(rob1929)
 binera(rob1929, iter=10, plots=TRUE)
 ```
 
-You can EXTRAPOLATE to a higher number of hosts using _copredict_:
+You can EXTRAPOLATE to a higher number of hosts using `copredict`:
 
 
+*Multigroup* extrapolation is coming soon!
 
-Coextinction curves in the style of Koh _et al._, 2004
+Coextinction curves
+----------------------
 
+Coextinction curves in the style of Koh _et al._, 2004 are done with `coextinct`:
 
 ``` {r dataset, message=FALSE}
 coextinct(rob1929, iter=10, plots=TRUE)
 ```
 
+I'll be adding new functionality for that part of the package soon.
