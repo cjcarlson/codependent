@@ -41,6 +41,9 @@ binera(rob1929, iter=10, plots=TRUE)
 
 You can EXTRAPOLATE to a higher number of hosts using `copredict`:
 
+``` {r dataset, message=FALSE}
+copredict(rob1929, n.indep=500, iter=10, plot=TRUE)
+```
 
 *Multigroup* extrapolation is coming soon!
 
