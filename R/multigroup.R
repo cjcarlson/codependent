@@ -6,6 +6,8 @@
 #' @param fake A data frame of the group membership of all the sample species
 #' @param orders You gotta just quickly name all the groups
 #' @param est.num.fake The numbers you extrapolated for each group
+#'
+#' @export
 
 
 multigroup <- function(fake,
