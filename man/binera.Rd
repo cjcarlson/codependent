@@ -4,7 +4,8 @@
 \alias{binera}
 \title{Binary rarefaction (curve-fitting)}
 \usage{
-binera(assoc.df, iter = 100, plots = FALSE, subSample = NULL)
+binera(assoc.df, iter = 100, plots = FALSE, subSample = NULL,
+  koh = FALSE)
 }
 \arguments{
 \item{assoc.df}{The raw dataset of associations (pairs of names in two columns, hosts and affiliates)}
